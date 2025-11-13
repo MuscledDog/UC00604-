@@ -5,12 +5,14 @@
   "projects": {
     "UC00604-": {
       "projectType": "application",
-      "@schematics/angular:component": {
+      "schematics": {
+          "@schematics/angular:component": {
           "skipTests": true
         },
         "@schematics/angular:service": {
           "skipTests": true
-        },
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
