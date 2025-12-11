@@ -1,0 +1,32 @@
+.uc-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 2rem;
+  background: var(--background-color-sections);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  font-family: var(--main-font-family);
+}
+
+.uc-header {
+  background: var(--background-color-header);
+  color: var(--text-color-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.uc-section {
+  margin-bottom: 2rem;
+}
+
+.uc-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.uc-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
