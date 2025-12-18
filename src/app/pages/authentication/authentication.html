@@ -1,13 +1,25 @@
-<div class="auth-container">
-  <header class="auth-header">
-    <h2>Acesso à UC604</h2>
-    <p>Para consultar mais conteúdos desta unidade, é necessário iniciar sessão.</p>
-  </header>
+<div class="login-card">
+  <h2>Sign In</h2>
+  <p>Login para continuar</p>
+  <!-- botão de reset-->
+  <button (click)="this.signinForms.reset()" class="clean-button">Limpar Campos</button>
 
-  <section class="auth-options">
-    <button class="auth-button local-login">Entrar com Conta</button>
-    <button class="auth-button google-login">Entrar com Google</button>
-    <button class="auth-button microsoft-login">Entrar com Microsoft</button>
-    <button class="auth-button apple-login">Entrar com Apple</button>
-  </section>
+  <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
+
+    <!--input do email-->
+    <!-- <label for="email">E-Mail</label> -->
+    <input type="email" name="email" placeholder="Digite seu email" formControlName="email">
+    <!-- Input da password-->
+     <!-- <label for="password">Password</label> -->
+    <input type="password" name="password" placeholder="Digite a sua senha" formControlName="password">
+
+    <!-- Botões -->
+    <div class="button-group">
+        <button type="button" class="go-back">Voltar</button>
+        <button type="submit" class="sign-in">Signin</button>
+    </div>
+
+
+    <!-- Fim do Form -->
+  </form>
 </div>
