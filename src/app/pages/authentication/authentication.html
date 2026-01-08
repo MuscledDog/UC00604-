@@ -7,11 +7,51 @@
   <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
 
     <!--input do email-->
-    <!-- <label for="email">E-Mail</label> -->
-    <input type="email" name="email" placeholder="Digite seu email" formControlName="email">
+    <label for="email">E-Mail</label>
+        <input type="email" name="email" placeholder="Digite seu email" formControlName="email">
+        @if (this.signinForms.invalid && this.signinForms.get("email")?.touched) {
+
+          @if (this.signinForms.hasError('required',"email")) {
+              <div class="error-message">
+          <small>Campo obrigatório</small>
+         </div>
+          }
+          @if (this.signinForms.getError("email","email")) {
+            <div class="error-message">
+          <small>Erro no padrão do e-mail</small>
+         </div>
+          }
+
+        }
+
+
     <!-- Input da password-->
-     <!-- <label for="password">Password</label> -->
+     <label for="password">Password</label>
     <input type="password" name="password" placeholder="Digite a sua senha" formControlName="password">
+        @if (!this.signinForms.valid && this.signinForms.get("password")?.touched) {
+
+          @if (this.signinForms.get("password")?.getError("required")) {
+            <div class="error-message">
+          <small>Campo obrigatório</small>
+         </div>
+          }
+          @if (this.signinForms.hasError("minlength","password")) {
+            <div class="error-message">
+          <small>Campo tem de ter no mínimo 3 caracteres</small>
+         </div>
+          }
+          @if (this.signinForms.get("password")?.getError("maxlength")) {
+          <div class="error-message">
+          <small>Campo tem de ter no máximo 10 caracteres</small>
+         </div>
+
+          }
+
+
+
+        }<!-- Fim bloco -->
+
+
 
     <!-- Botões -->
     <div class="button-group">
